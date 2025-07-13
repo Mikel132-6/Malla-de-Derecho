@@ -1,43 +1,154 @@
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html><html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Malla Curricular - Derecho</title>
+  <title>Malla Derecho - USTA</title>
   <style>
-    body { font-family: Arial, sans-serif; padding: 20px; background: #f0f2f5; }
-    h1 { color: #333; }
-    .semestre { margin-bottom: 20px; padding: 15px; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-    .materia { margin: 8px 0; padding: 10px; background: #e8f0fe; border-left: 5px solid #007bff; cursor: pointer; border-radius: 5px; }
-    .materia:hover { background: #d0e7ff; }
+    body { font-family: Arial, sans-serif; background: #f4f4f4; padding: 20px; }
+    h1, h2 { color: #2c3e50; }
+    .semestre {
+      margin-bottom: 25px;
+      background: #fff;
+      padding: 15px;
+      border-left: 6px solid #007bff;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .materia {
+      display: flex;
+      align-items: center;
+      margin: 6px 0;
+      padding: 8px 12px;
+      background: #ecf3ff;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .materia:hover {
+      background: #d4e6ff;
+    }
+    .materia i {
+      margin-right: 10px;
+      font-size: 18px;
+    }
+    .tachada {
+      text-decoration: line-through;
+      color: gray;
+      background: #f0f0f0 !important;
+    }
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
-<body>
-
-  <h1>Malla Curricular - Derecho</h1>
-
-  <div class="semestre">
-    <h2>Semestre 1</h2>
-    <div class="materia" onclick="window.open('https://drive.google.com/tu-link-a-apuntes')">
-      Introducción al Derecho
-    </div>
-    <div class="materia" onclick="window.open('https://...')">
-      Historia del Derecho
-    </div>
-    <div class="materia" onclick="window.open('https://...')">
-      Lógica Jurídica
-    </div>
-  </div>
-
-  <div class="semestre">
-    <h2>Semestre 2</h2>
-    <div class="materia" onclick="window.open('https://...')">
-      Derecho Constitucional I
-    </div>
-    <div class="materia" onclick="window.open('https://...')">
-      Teoría del Estado
-    </div>
-    <!-- Agrega más materias aquí -->
-  </div>
-
-</body>
+<body><h1>Malla Curricular Derecho - USTA</h1><script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const materias = document.querySelectorAll('.materia');
+    materias.forEach((el, i) => {
+      const id = 'materia-' + i;
+      el.id = id;
+      if (localStorage.getItem(id) === 'true') {
+        el.classList.add('tachada');
+      }
+      el.addEventListener('click', () => {
+        el.classList.toggle('tachada');
+        localStorage.setItem(id, el.classList.contains('tachada'));
+      });
+    });
+  });
+</script><!-- Semestre 1 --><div class="semestre">
+  <h2>Semestre 1</h2>
+  <div class="materia"><i class="fas fa-chart-line"></i> Analítica I</div>
+  <div class="materia"><i class="fas fa-balance-scale"></i> Introducción al Derecho</div>
+  <div class="materia"><i class="fas fa-book"></i> Filosofía y teoría del Derecho</div>
+  <div class="materia"><i class="fas fa-users"></i> Sociología jurídica</div>
+  <div class="materia"><i class="fas fa-landmark"></i> Historia del Derecho y de las instituciones jurídicas</div>
+  <div class="materia"><i class="fas fa-brain"></i> Filosofía institucional</div>
+  <div class="materia"><i class="fas fa-language"></i> Lengua extranjera Inglés I</div>
+  <div class="materia"><i class="fas fa-dumbbell"></i> Cátedra formación física integral</div>
+  <div class="materia"><i class="fas fa-user-ninja"></i> Antropología</div>
+</div><!-- Semestre 2 --><div class="semestre">
+  <h2>Semestre 2</h2>
+  <div class="materia"><i class="fas fa-globe"></i> Políticas de inclusión</div>
+  <div class="materia"><i class="fas fa-scale-balanced"></i> Enfoque diferencial de los derechos humanos</div>
+  <div class="materia"><i class="fas fa-university"></i> Teoría del Estado y de la Constitución</div>
+  <div class="materia"><i class="fas fa-lightbulb"></i> Epistemología</div>
+  <div class="materia"><i class="fas fa-language"></i> Lengua extranjera Inglés II</div>
+  <div class="materia"><i class="fas fa-chart-line"></i> Analítica II</div>
+  <div class="materia"><i class="fas fa-scale-unbalanced"></i> Teoría general del proceso</div>
+  <div class="materia"><i class="fas fa-gavel"></i> Teoría general de la prueba</div>
+  <div class="materia"><i class="fas fa-flask"></i> Metodología de la investigación</div>
+</div><!-- Semestre 3 --><div class="semestre">
+  <h2>Semestre 3</h2>
+  <div class="materia"><i class="fas fa-leaf"></i> Derecho ambiental</div>
+  <div class="materia"><i class="fas fa-bank"></i> Derecho administrativo</div>
+  <div class="materia"><i class="fas fa-scale-balanced"></i> Derecho minero</div>
+  <div class="materia"><i class="fas fa-language"></i> Lengua extranjera Inglés III</div>
+  <div class="materia"><i class="fas fa-landmark"></i> Derecho constitucional</div>
+  <div class="materia"><i class="fas fa-handshake"></i> Derecho constitucional público y comunitario</div>
+  <div class="materia"><i class="fas fa-scroll"></i> Interpretación y argumentación jurídica</div>
+  <div class="materia"><i class="fas fa-brain"></i> Filosofía política</div>
+</div><!-- Semestre 4 --><div class="semestre">
+  <h2>Semestre 4</h2>
+  <div class="materia"><i class="fas fa-chart-line"></i> Analítica IV</div>
+  <div class="materia"><i class="fas fa-cross"></i> Cultura teológica</div>
+  <div class="materia"><i class="fas fa-language"></i> Lengua extranjera Inglés IV</div>
+  <div class="materia"><i class="fas fa-gavel"></i> Derecho procesal administrativo y probatorio</div>
+  <div class="materia"><i class="fas fa-piggy-bank"></i> Derecho público económico</div>
+  <div class="materia"><i class="fas fa-globe"></i> Derechos humanos y derecho internacional</div>
+  <div class="materia"><i class="fas fa-lightbulb"></i> Proyecto de investigación I</div>
+</div><!-- Semestre 5 --><div class="semestre">
+  <h2>Semestre 5</h2>
+  <div class="materia"><i class="fas fa-chart-line"></i> Analítica V</div>
+  <div class="materia"><i class="fas fa-handshake"></i> Negocio jurídico y obligaciones</div>
+  <div class="materia"><i class="fas fa-child"></i> Derecho de familia y legislación del menor</div>
+  <div class="materia"><i class="fas fa-users"></i> Sucesiones</div>
+  <div class="materia"><i class="fas fa-lightbulb"></i> Proyecto de investigación II</div>
+  <div class="materia"><i class="fas fa-scale-balanced"></i> Contratos civiles</div>
+  <div class="materia"><i class="fas fa-language"></i> Lengua extranjera Inglés V</div>
+  <div class="materia"><i class="fas fa-briefcase"></i> Derecho comercial y bienes</div>
+</div><!-- Semestre 6 --><div class="semestre">
+  <h2>Semestre 6</h2>
+  <div class="materia"><i class="fas fa-chart-line"></i> Analítica VI</div>
+  <div class="materia"><i class="fas fa-laptop"></i> Electronic commerce</div>
+  <div class="materia"><i class="fas fa-code"></i> Informatics law</div>
+  <div class="materia"><i class="fas fa-people-arrows"></i> Sociedades civiles y comerciales</div>
+  <div class="materia"><i class="fas fa-briefcase"></i> Contratos comerciales e internacionales</div>
+  <div class="materia"><i class="fas fa-gavel"></i> Derecho procesal civil</div>
+  <div class="materia"><i class="fas fa-balance-scale"></i> Derecho probatorio</div>
+  <div class="materia"><i class="fas fa-comments"></i> Mecanismos alternativos de solución de conflictos</div>
+  <div class="materia"><i class="fas fa-language"></i> Lengua extranjera Inglés VI</div>
+  <div class="materia"><i class="fas fa-money-check"></i> Títulos valores</div>
+</div><!-- Semestre 7 --><div class="semestre">
+  <h2>Semestre 7</h2>
+  <div class="materia"><i class="fas fa-chart-line"></i> Analítica VII</div>
+  <div class="materia"><i class="fas fa-gavel"></i> Responsabilidad penal juvenil</div>
+  <div class="materia"><i class="fas fa-user-shield"></i> Derecho penal internacional</div>
+  <div class="materia"><i class="fas fa-user-secret"></i> Derecho penal general</div>
+  <div class="materia"><i class="fas fa-gavel"></i> Derecho procesal penal</div>
+  <div class="materia"><i class="fas fa-scale-balanced"></i> Derecho penal especial</div>
+  <div class="materia"><i class="fas fa-handshake"></i> Consultorio jurídico I</div>
+  <div class="materia"><i class="fas fa-briefcase"></i> Derecho laboral individual</div>
+</div><!-- Semestre 8 --><div class="semestre">
+  <h2>Semestre 8</h2>
+  <div class="materia"><i class="fas fa-users"></i> Derecho laboral colectivo</div>
+  <div class="materia"><i class="fas fa-handshake"></i> Seguridad social</div>
+  <div class="materia"><i class="fas fa-gavel"></i> Derecho procesal laboral</div>
+  <div class="materia"><i class="fas fa-balance-scale"></i> Derecho probatorio</div>
+  <div class="materia"><i class="fas fa-balance-scale"></i> Ética</div>
+  <div class="materia"><i class="fas fa-briefcase"></i> Consultorio jurídico II</div>
+  <div class="materia"><i class="fas fa-search"></i> Criminología y política criminal</div>
+  <div class="materia"><i class="fas fa-lightbulb"></i> Pensamiento lógico</div>
+</div><!-- Semestre 9 --><div class="semestre">
+  <h2>Semestre 9</h2>
+  <div class="materia"><i class="fas fa-chart-line"></i> Analítica IX</div>
+  <div class="materia"><i class="fas fa-handshake"></i> Consultorio jurídico III</div>
+  <div class="materia"><i class="fas fa-user-graduate"></i> Profundización I</div>
+  <div class="materia"><i class="fas fa-user-graduate"></i> Profundización II</div>
+  <div class="materia"><i class="fas fa-lightbulb"></i> Formación institucional (humanística)</div>
+  <div class="materia"><i class="fas fa-book-reader"></i> Cátedra opcional complementaria</div>
+</div><!-- Semestre 10 --><div class="semestre">
+  <h2>Semestre 10</h2>
+  <div class="materia"><i class="fas fa-chart-line"></i> Analítica X (Inglés)</div>
+  <div class="materia"><i class="fas fa-handshake"></i> Consultorio jurídico IV</div>
+  <div class="materia"><i class="fas fa-user-graduate"></i> Profundización III</div>
+  <div class="materia"><i class="fas fa-user-graduate"></i> Profundización IV</div>
+</div></body>
   </html>
